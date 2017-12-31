@@ -14,8 +14,11 @@ typedef struct bag{
 int main() {
 	srand(time(NULL));
 	struct bag bags;
+
 	for (int ii = 0; ii < 24; ii++){
+
 		int r = rand();
+		//printf("%d\n", r);
 
 		if (r % 2){
 			bags.items[ii] = true;
@@ -25,7 +28,5 @@ int main() {
 		}
 	}
 
-
-	printf("Hello, World!\n");
 	return 0;
 }
