@@ -13,20 +13,21 @@ typedef struct bag{
 
 int main() {
 	srand(time(NULL));
-	struct bag bags;
+	struct bag bags[512];
 
-	for (int ii = 0; ii < 24; ii++){
+	for (int jj = 0; jj < 512; jj++) {
+		for (int ii = 0; ii < 24; ii++) {
 
-		int r = rand();
-		//printf("%d\n", r);
+			int r = rand();
+			//printf("%d\n", r);
 
-		if (r % 2){
-			bags.items[ii] = true;
-		}
-		else{
-			bags.items[ii] = false;
+			if (r % 2) {
+				bags[jj].items[ii] = true;
+			}
+			else {
+				bags[jj].items[ii] = false;
+			}
 		}
 	}
-
 	return 0;
 }
