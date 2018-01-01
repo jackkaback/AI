@@ -10,24 +10,47 @@ typedef struct bag{
 	int value;
 };
 
+int makeValue (bool items []){
+
+}
+
+int makeWeight(bool items []){
+
+}
+
+int scorer(bool items []){
+
+}
+
+void init_bags(struct bag *bags){
+	struct bag bagger = *bags;
+
+	bagger.weight = 0;
+	bagger.score = 0;
+	bagger.value = 0;
+
+	for (int ii = 0; ii < 24; ii++) {
+
+		int r = rand();
+		//printf("%d\n", r);
+
+		if (r % 2) {
+			bagger.items[ii] = true;
+		}
+		else {
+			bagger.items[ii] = false;
+		}
+	}
+
+	*bags = bagger;
+}
 
 int main() {
 	srand(time(NULL));
 	struct bag bags[512];
 
 	for (int jj = 0; jj < 512; jj++) {
-		for (int ii = 0; ii < 24; ii++) {
-
-			int r = rand();
-			//printf("%d\n", r);
-
-			if (r % 2) {
-				bags[jj].items[ii] = true;
-			}
-			else {
-				bags[jj].items[ii] = false;
-			}
-		}
+		init_bags(&bags[jj]);
 	}
 	return 0;
 }
